@@ -1,0 +1,61 @@
+<div class="hover">
+
+<li>
+<p> <%= task.name %>
+
+</p>  
+
+
+<% unless action_name == "show" %>
+
+
+<div class="pull-right btx">
+
+<div class="checkbox">
+  <label><input type="checkbox" value="">Done</label>
+</div>
+
+
+
+
+
+<div type="button" class="btn btn-info">
+
+
+<%= link_to "Show", user_task_path(@user, task) %>
+
+</div>
+
+<% end %>
+
+<div type="button" class="btn btn-warning">
+
+<%= link_to "Edit", edit_user_task_path(@user, task) %>
+
+</div>
+
+<div type="button" class="btn btn-danger">
+<%= link_to "Delete", user_task_path(@user, task), method: :delete %>
+
+</div>
+
+
+
+</div>
+
+
+</li>
+
+
+
+<br>
+
+
+</div>
+
+
+
+
+
+
+

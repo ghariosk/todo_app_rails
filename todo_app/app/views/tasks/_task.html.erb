@@ -3,17 +3,30 @@
 <li>
 <p> <%= task.name %>
 
+
+
 </p>  
-
-
-<% unless action_name == "show" %>
 
 
 <div class="pull-right btx">
 
-<div class="checkbox">
-  <label><input type="checkbox" value="">Done</label>
-</div>
+
+
+
+<% if task.done == true %>
+
+ <img src="https://www.flytap.com/-/media/Flytap/reserved-area/benefits/check-in.svg">
+
+<% end %>
+
+<% unless action_name == "show" %>
+
+
+
+
+
+
+
 
 
 
@@ -28,16 +41,21 @@
 
 <% end %>
 
-<div type="button" class="btn btn-warning">
+	<div type="button" class="btn btn-warning">
 
-<%= link_to "Edit", edit_user_task_path(@user, task) %>
+		<%= link_to "Edit", edit_user_task_path(@user, task) %>
 
-</div>
+	</div>
 
-<div type="button" class="btn btn-danger">
-<%= link_to "Delete", user_task_path(@user, task), method: :delete %>
+	<div type="button" class="btn btn-danger">
+		<%= link_to "Delete", user_task_path(@user, task), method: :delete %>
 
-</div>
+	</div>
+
+
+
+
+	
 
 
 

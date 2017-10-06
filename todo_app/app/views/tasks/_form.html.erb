@@ -2,7 +2,15 @@
 
 
 
-<%= f.text_field :name, :class => 'form-control form control-lg' %>
+<%= f.text_field :name, :class => 'form-control form control-lg' if action_name="new" || action_name="edit" %>
+
+
+	
+	<%= f.check_box :done %>
+
+
+	
+
 
 
 <br>

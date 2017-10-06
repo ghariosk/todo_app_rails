@@ -8,23 +8,23 @@
 
 
 
-t1 = Task.create(name: "Clean the house" , user_id: 1 ) 
+t1 = Task.create(name: "Clean the house" , user_id: 1, done: true ) 
 
-t2 = Task.create(name: "Clean the room", user_id: 1)
-
-
+t2 = Task.create(name: "Clean the room", user_id: 1, done: false)
 
 
 
 
- Task.create(name: "Clean the room", user_id: 1)
 
-  Task.create(name: "Clean the room", user_id: 2)
 
-   Task.create(name: "Clean the room", user_id: 3)
-    Task.create(name: "Clean the room", user_id: 4)
-     Task.create(name: "Clean the room", user_id: 5)
-      Task.create(name: "Clean the room", user_id: 6)
- Task.create(name: "Clean the room", user_id: 7)
+#  Task.create(name: "Clean the room", user_id: 1)
 
-Task.create(name: "Clean the room", user_id: 8)
+#   Task.create(name: "Clean the room", user_id: 2)
+
+#    Task.create(name: "Clean the room", user_id: 3)
+#     Task.create(name: "Clean the room", user_id: 4)
+#      Task.create(name: "Clean the room", user_id: 5)
+#       Task.create(name: "Clean the room", user_id: 6)
+#  Task.create(name: "Clean the room", user_id: 7)
+
+# Task.create(name: "Clean the room", user_id: 8)

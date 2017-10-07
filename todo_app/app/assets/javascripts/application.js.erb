@@ -15,13 +15,33 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+//= require popper
+
+
+$(function () {
+
+	console.log('Dom loaded!');
 
 
 
-$( "input" ).change(function() {
-  var $input = $( this );
-  $( "p" ).html(
-    ".attr( \"checked\" ): <b>" + $input.attr( "checked" ) + "</b><br>" +
-    ".prop( \"checked\" ): <b>" + $input.prop( "checked" ) + "</b><br>" +
-    ".is( \":checked\" ): <b>" + $input.is( ":checked" ) + "</b>" );
-}).change();
+
+$('.form-class').each(function () {
+
+	$(this).on('click', function () {
+
+			$(this).submit();
+
+
+
+	})
+
+})
+
+
+$('.dropdown-toggle').dropdown()
+
+
+
+
+})
+

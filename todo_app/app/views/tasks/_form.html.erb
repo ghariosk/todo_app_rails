@@ -1,15 +1,20 @@
+<hr />
 <%= form_for ([@user , @task]) do |f| %>
 
 
 
+
+<h2> What's the catch ? </h2>
+
+<br> 
 <%= f.text_field :name, :class => 'form-control form control-lg' if action_name="new" || action_name="edit" %>
 
 
 	
-	<%= f.check_box :done %>
-
-
 	
+
+
+	<%= f.check_box :done %>
 
 
 

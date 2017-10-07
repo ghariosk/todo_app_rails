@@ -1,10 +1,7 @@
-<div class="hover">
+<div class="hover <% if task.done == true %> blue <% end %> ">
 
 <li>
 <p> <%= task.name %>
-
-
-
 </p>  
 
 
@@ -13,31 +10,27 @@
 
 
 
-<% if task.done == true %>
 
- <img src="https://www.flytap.com/-/media/Flytap/reserved-area/benefits/check-in.svg">
+<%= form_for ([@user,@user.tasks.find(task.id)]),:html => { :class => 'form-class'} do |f| %>
 
+
+			<%= f.check_box :done, :class => 'form-class' if task.done == false %>
 <% end %>
+
+	<% if task.done == true %>
+
+	 <img src="https://www.flytap.com/-/media/Flytap/reserved-area/benefits/check-in.svg">
+
+	<% end %>
 
 <% unless action_name == "show" %>
 
+		<div type="button" class="btn btn-info">
 
 
+			<%= link_to "Show", user_task_path(@user, task) %>
 
-
-
-
-
-
-
-
-
-<div type="button" class="btn btn-info">
-
-
-<%= link_to "Show", user_task_path(@user, task) %>
-
-</div>
+		</div>
 
 <% end %>
 

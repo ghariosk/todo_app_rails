@@ -1,7 +1,8 @@
 <br> <br>
 <h1>To Do List</h1> 
+<hr />
 
-<br> <br> <br>
+
 
 
 
@@ -14,9 +15,46 @@
 <%= render @tasks %>
 <br>
 
-<h3> <%= link_to "New Post", new_user_task_path(@user), class: "btn btn-primary" %> </h3>
+<h3> <%= link_to "New Post", new_user_task_path(@user), class: "btn btn-primary" %> 
+
+
+
+
+
+<div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   Quick-Add
+  </button>
+
+
+
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+   
+
+    <%= form_for ([@user,Task.new]) do |f| %>
+
+
+			<%= f.text_field :name, :class => 'dropdown-item'%>
+			<%= f.check_box :done %>
+
+			<div id='quick-add'>
+
+			<%= f.submit :class => 'btn btn-primary' %>
+
+
+			</div>
+		<% end %>
+  </div>
+</div>
+
+</h3>
+
+
+
 
 </ol>
+
+
 
 
 

@@ -1,7 +1,47 @@
 class TasksController < ApplicationController
   def index
-    @tasks=current_user.tasks
+
+   
+
+    @tasks=current_user.tasks.sort_by &:id
+
+    
     @user=current_user
+
+
+
+
+
+
+
+  @tasks.each_with_index do |element,index|
+      if index == true
+            @task=@tasks.find(index)
+
+      end
+
+      if element.done == true 
+      @hightlight="blue"
+      end
+
+
+
+
+
+
+  end
+
+
+ 
+
+
+
+  
+   
+
+
+
+
   end
 
   def show
@@ -24,12 +64,15 @@ class TasksController < ApplicationController
    end
 
   def create
+    @tasks=current_user.tasks
 
     @user=current_user
 
     new_task=@user.tasks.create(task_params)
 
     new_task.save
+
+    @tasks.order(:id)
 
     redirect_to user_tasks_path
   end
@@ -42,9 +85,13 @@ class TasksController < ApplicationController
 
   def update
 
+    @tasks=current_user.tasks
+
       @user=current_user
 
       new_post=@user.tasks.find(params[:id]).update(task_params)
+
+      @tasks.order(:id)
 
   
 

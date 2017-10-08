@@ -13,7 +13,13 @@
 
 
 <%= render @tasks %>
+
+
+
 <br>
+
+
+<div id="smooth">
 
 <h3> <%= link_to "New Post", new_user_task_path(@user), class: "btn btn-primary" %> 
 
@@ -31,20 +37,27 @@
   <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
    
 
-    <%= form_for ([@user,Task.new]) do |f| %>
+    <%= form_for ([@user,Task.new]), :html => { :class => 'form-new'}  do |f| %>
 
 
 			<%= f.text_field :name, :class => 'dropdown-item'%>
 			<%= f.check_box :done %>
 
+
 			<div id='quick-add'>
 
-			<%= f.submit :class => 'btn btn-primary' %>
+			<div data-toggle='dropdown' >
+
+			<%= f.submit :class => 'new btn btn-primary'  %>
+
+			</div>
 
 
 			</div>
 		<% end %>
   </div>
+
+ </div>
 </div>
 
 </h3>

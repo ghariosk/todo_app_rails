@@ -1,5 +1,11 @@
 class TasksController < ApplicationController
+
+
+
+
   def index
+     
+
 
    
 
@@ -29,6 +35,8 @@ class TasksController < ApplicationController
 
 
 
+
+
   end
 
 
@@ -37,7 +45,7 @@ class TasksController < ApplicationController
 
 
   
-   
+   $bounce = false
 
 
 
@@ -74,6 +82,12 @@ class TasksController < ApplicationController
 
     @tasks.order(:id)
 
+    $bounce = true
+
+
+
+
+
     redirect_to user_tasks_path
   end
 
@@ -101,13 +115,22 @@ class TasksController < ApplicationController
   def destroy
     @user=current_user
 
-    @user.tasks.destroy(params[:id])
+    @tasks=current_user.tasks
 
-    redirect_to user_tasks_path
+    
+
+     @task=current_user.tasks.find(params[:id].to_i )
+
+         @user.tasks.destroy(params[:id].to_i )
+
+    
+
+
+        redirect_to user_tasks_path
   end
 
   protected
   def task_params
-    params.require(:task).permit(:name, :done)
+    params.require(:task).permit(:name, :done, :id, :user_id)
   end
 end

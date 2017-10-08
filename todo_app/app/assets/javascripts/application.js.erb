@@ -19,6 +19,23 @@
 
 
 $(function () {
+	
+
+
+
+
+$('.hover').last().addClass('bounceInLeft')
+
+
+setTimeout(function () {
+
+	$('.hover').removeClass('animated bounceInLeft')
+	$('.hover').removeClass('animated bounceInRight')
+
+},500)
+
+
+
 
 	console.log('Dom loaded!');
 
@@ -29,6 +46,11 @@ $('.form-class').each(function () {
 
 	$(this).on('click', function () {
 
+		 
+
+
+		
+
 			$(this).submit();
 
 
@@ -38,10 +60,155 @@ $('.form-class').each(function () {
 })
 
 
-$('.dropdown-toggle').dropdown()
+
+
+
+
+// $('.delete').each(function () { 
+
+// 	console.log ('hello')
+
+
+
+
+// 		$(.delete).on('click',function () {
+
+
+			
+// 			$('.enleve').preventDefault(e)
+			
+
+
+// 			$('.hover').addClass('')
+
+
+// 			setTimeout(function () {
+
+
+// 				console.log('dom ') 
+// 			},400)
+
+
+
+
+// 		})
+// })
+
+
+var $a = 0
+
+ $('.delete').one('click',function(e){
+
+ 	$this=$(this)
+
+
+ 	$a = $('.hover').index($(this).parent().parent().parent())
+
+ 	console.log($a)
+
+
+   $b= $(".hover:eq(" + $a + ')').nextAll()
+
+   console.log($b)
+
+
+
+
+    e.preventDefault() 
+
+    
+        $this.parent().parent().parent().addClass('animated bounceOutRight')
+
+
+
+        setTimeout(function (){
+
+
+
+
+       $b.animate({
+
+        	top: '-=32px'
+
+
+        },100)
+
+        console.log('hello')
+
+          
+
+
+        },400)
+
+
+          setTimeout(function () {
+
+
+        	$this.parent().submit()
+
+        	
+        },500)
+
+
+
+
+       
+   
+  });
+
+
+
+ $('.new').one('click', function (e) {
+
+
+
+
+ 	 e.preventDefault()
+
+
+ 	 $('#smooth').animate({
+
+        	top: '+=67px'
+
+
+        },100)
+
+
+
+ 	  setTimeout(function () {
+
+
+        	$('.form-new').submit()
+
+        	
+        },150)
+
+
+
+
+ })
+
+
+
+	// setTimeout(function () {
+
+	// 	$(this).submit();
+
+	// },1000)
+
+
+
+
+
+
 
 
 
 
 })
+
+
+
+
+
 

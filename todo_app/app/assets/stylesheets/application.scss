@@ -12,10 +12,18 @@
  *
  *= require_tree .
  *= require_self
+
+
  */
+
+ @import "animate";
+
+
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+
 
 
 body {
@@ -79,11 +87,13 @@ p {
 	padding-right:25px;
 	padding-left:25px;
 
-	background-color:rgba(22,78,201,0.72);
+	
 	
 
 	border-top:1px solid grey;
 	border-bottom:1px solid grey;
+	background-color:rgba(63,215,138,0.30);
+
 
 
 	
@@ -99,6 +109,9 @@ p {
 	padding-left:25px;
 	border-bottom:3px solid grey;
 	border-radius:3px;
+	position:relative;
+
+
 
 
 
@@ -155,6 +168,11 @@ width:400px
 #quick-add {
 	float:right;
 	padding-right:20px
+}
+
+
+#smooth {
+	position:relative
 }
 
 

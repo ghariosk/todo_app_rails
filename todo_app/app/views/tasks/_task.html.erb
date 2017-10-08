@@ -1,7 +1,23 @@
-<div class="hover <% if task.done == true %> blue <% end %> ">
+<% t = Time.now %>
+
+<% hello = task.created_at.strftime("%S").to_i-t.strftime("%S").to_i %>
+<% minute = task.created_at.strftime("%M").to_i-t.strftime("%M").to_i %>
+
+<div class="hover <% if task.done == true %> blue <% end %> <% if hello < 1 && minute == 0 %> animated <% end %>">
+
+
+
+
 
 <li>
 <p> <%= task.name %>
+
+
+
+
+
+
+
 </p>  
 
 
@@ -40,10 +56,29 @@
 
 	</div>
 
-	<div type="button" class="btn btn-danger">
-		<%= link_to "Delete", user_task_path(@user, task), method: :delete %>
 
-	</div>
+
+	
+
+
+	
+
+
+		<%= form_for ([@user, @user.tasks.find(task.id)]), :html => { :class => 'btn' }, method: :delete do |f| %>
+
+		
+
+		<%= f.button "Remove", :class => "enleve btn btn-danger delete" %>
+
+		<% end %>
+
+
+
+
+
+
+		
+	
 
 
 

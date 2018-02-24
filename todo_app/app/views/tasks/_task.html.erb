@@ -58,17 +58,21 @@
 
 
 
-	
 
 
 	
 
 
-		<%= form_for ([@user, @user.tasks.find(task.id)]), :html => { :class => 'btn' }, method: :delete do |f| %>
+	
+
+
+		<%= form_for ([@user, @user.tasks.find(task.id)]), :html => { :class => 'btn' , method: :delete } do |f| %>
 
 		
 
-		<%= f.button "Remove", :class => "enleve btn btn-danger delete" %>
+			<%= f.button "Remove", :class => "enleve btn btn-danger delete" %>
+
+
 
 		<% end %>
 
